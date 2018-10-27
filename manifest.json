@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+
+  "name": "Lprotct email analyzer",
+  "description": "Analyzes email to detect possible instances of user manipulation",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+      "default_title": "Lprotct"
+  },
+
+  "background": {
+    "scripts": ["background.js", "main.js"],
+    "persistent": false
+  },
+
+  "permissions": [
+    "tabs",
+    "<all_urls>"
+  ],
+
+  "content_scripts": [{
+        "js": ["content_script.js"],
+        "matches": ["<all_urls>"]
+  }],
+
+ "permissions": [
+    "nativeMessaging",
+    "tabs"
+  ],
+
+  "web_accessible_resources": ["script.js"]
+}
+
+
+
